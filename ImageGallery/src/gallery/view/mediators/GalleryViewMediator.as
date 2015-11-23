@@ -2,9 +2,9 @@ package gallery.view.mediators {
     import gallery.model.vo.Gallery;
     import gallery.model.vo.IGalleryImage;
     import gallery.signals.GalleryUpdatedSignal;
-    import gallery.signals.ViewInitializedSignal;
-    import gallery.signals.LoadNewImageSignal;
     import gallery.signals.ImageSelectedSignal;
+    import gallery.signals.LoadNewImageSignal;
+    import gallery.signals.ViewInitializedSignal;
     import gallery.view.components.IGalleryView;
 
     import org.robotlegs.mvcs.Mediator;

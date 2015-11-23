@@ -3,7 +3,6 @@ package gallery.cases {
     import asunit.framework.TestCase;
 
     import gallery.model.factories.XMLGalleryFactory;
-
     import gallery.model.vo.Gallery;
     import gallery.service.XMLImageService;
     import gallery.signals.UpdateGallerySignal;

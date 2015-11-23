@@ -5,11 +5,10 @@ package gallery.cases {
     import gallery.model.vo.Gallery;
     import gallery.model.vo.GalleryImage;
     import gallery.signals.GalleryUpdatedSignal;
-    import gallery.signals.ViewInitializedSignal;
-    import gallery.signals.LoadNewImageSignal;
     import gallery.signals.ImageSelectedSignal;
+    import gallery.signals.LoadNewImageSignal;
+    import gallery.signals.ViewInitializedSignal;
     import gallery.view.components.collageGallery.CollageGalleryView;
-    import gallery.view.components.collageGallery.CollageTileView;
     import gallery.view.mediators.GalleryViewMediator;
     import gallery.view.utils.bowcamp.BowcampOrders;
 

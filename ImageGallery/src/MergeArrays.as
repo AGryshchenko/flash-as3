@@ -1,10 +1,7 @@
-/**
- * Created by Azure on 11/23/2015.
- */
 package {
     import flash.display.Sprite;
 
-    public class MergeArrays extends Sprite{
+    public class MergeArrays extends Sprite {
 
 
         public function MergeArrays() {
@@ -13,8 +10,7 @@ package {
             trace(MergeArrays.mergeArrays(a, b).toString())
         }
 
-        public static function mergeArrays(a1:Array, a2:Array):Array
-        {
+        public static function mergeArrays(a1:Array, a2:Array):Array {
             var result:Array = new Array(a1.length + a2.length);
             var i:int = a1.length - 1, j:int = a2.length - 1;
             var k:int = result.length;

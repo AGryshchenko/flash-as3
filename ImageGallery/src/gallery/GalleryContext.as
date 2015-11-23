@@ -10,10 +10,10 @@ package gallery {
     import gallery.service.IGalleryImageService;
     import gallery.service.XMLImageService;
     import gallery.signals.GalleryUpdatedSignal;
-    import gallery.signals.ViewInitializedSignal;
-    import gallery.signals.LoadNewImageSignal;
     import gallery.signals.ImageSelectedSignal;
+    import gallery.signals.LoadNewImageSignal;
     import gallery.signals.UpdateGallerySignal;
+    import gallery.signals.ViewInitializedSignal;
     import gallery.view.components.IGalleryView;
     import gallery.view.mediators.ApplicationViewMediator;
     import gallery.view.mediators.GalleryViewMediator;

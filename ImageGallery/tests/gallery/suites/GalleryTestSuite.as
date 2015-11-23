@@ -7,10 +7,9 @@ package gallery.suites {
     import gallery.cases.TestSimpleGalleryMediation;
     import gallery.cases.TestXMLImageService;
 
-    public class GalleryTestSuite extends TestSuite{
+    public class GalleryTestSuite extends TestSuite {
 
-        public function GalleryTestSuite()
-        {
+        public function GalleryTestSuite() {
             super();
             addTest(new TestXMLImageService());
             addTest(new TestGalleryModel());

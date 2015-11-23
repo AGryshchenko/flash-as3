@@ -5,11 +5,10 @@ package gallery.cases {
     import gallery.model.vo.Gallery;
     import gallery.model.vo.GalleryImage;
     import gallery.signals.GalleryUpdatedSignal;
-    import gallery.signals.ViewInitializedSignal;
-    import gallery.signals.LoadNewImageSignal;
     import gallery.signals.ImageSelectedSignal;
+    import gallery.signals.LoadNewImageSignal;
+    import gallery.signals.ViewInitializedSignal;
     import gallery.view.components.simpleGallery.SimpleGalleryView;
-    import gallery.view.components.simpleGallery.SimpleTileView;
     import gallery.view.mediators.GalleryViewMediator;
 
     public class TestSimpleGalleryMediation extends TestCase {
