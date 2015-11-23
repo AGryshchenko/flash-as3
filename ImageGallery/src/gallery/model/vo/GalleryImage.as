@@ -1,4 +1,6 @@
 package gallery.model.vo {
+
+    /**Value object that represents image of the gallery in the model.*/
     public class GalleryImage implements IGalleryImage {
         protected var _URL:String;
 

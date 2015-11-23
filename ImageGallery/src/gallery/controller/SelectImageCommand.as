@@ -4,9 +4,8 @@ package gallery.controller {
 
     import org.robotlegs.mvcs.Command;
 
-    /**
-     * This is a chained command. It is used to remove selected image from model,
-     * and swap removed image with new image in view*/
+    /** This command is executed in response for selecting image by user and
+     * is used to get next image and send it to view for displaying.*/
     public class SelectImageCommand extends Command {
 
         [Inject]

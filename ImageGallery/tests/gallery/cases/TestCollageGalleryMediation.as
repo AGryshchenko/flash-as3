@@ -5,9 +5,9 @@ package gallery.cases {
     import gallery.model.vo.Gallery;
     import gallery.model.vo.GalleryImage;
     import gallery.signals.GalleryUpdatedSignal;
-    import gallery.signals.LoadGallerySignal;
+    import gallery.signals.ViewInitializedSignal;
     import gallery.signals.LoadNewImageSignal;
-    import gallery.signals.SelectImageSignal;
+    import gallery.signals.ImageSelectedSignal;
     import gallery.view.components.collageGallery.CollageGalleryView;
     import gallery.view.components.collageGallery.CollageTileView;
     import gallery.view.mediators.GalleryViewMediator;
@@ -19,7 +19,6 @@ package gallery.cases {
         private var testImage1:GalleryImage;
         private var testImage2:GalleryImage;
         private var testGallery:Gallery;
-        private var testTile:CollageTileView;
 
         public function TestCollageGalleryMediation(methodName:String = null) {
             super(methodName);
@@ -31,21 +30,19 @@ package gallery.cases {
             this.galleryViewMediator = new GalleryViewMediator();
             this.galleryViewMediator.setViewComponent(this.simpleGalleryView);
             this.galleryViewMediator.galleryView = this.simpleGalleryView;
-            this.galleryViewMediator.loadGallery = new LoadGallerySignal();
+            this.galleryViewMediator.viewInitialized = new ViewInitializedSignal();
             this.galleryViewMediator.galleryUpdated = new GalleryUpdatedSignal();
-            this.galleryViewMediator.selectImage = new SelectImageSignal();
+            this.galleryViewMediator.imageSelected = new ImageSelectedSignal();
             this.galleryViewMediator.loadNewImage = new LoadNewImageSignal();
             this.galleryViewMediator.onRegister();
 
             this.testImage1 = new GalleryImage();
             this.testImage2 = new GalleryImage();
-            this.testImage1.URL = "image1Test";
-            this.testImage2.URL = "image2Test";
+            this.testImage1.URL = "assets/gallery/images/3354402351_cf6797c126.jpg";
+            this.testImage2.URL = "assets/gallery/images/3355136923_3cbe01c482.jpg";
             this.testGallery = new Gallery();
             this.testGallery.photos.push(this.testImage1);
             this.testGallery.photos.push(this.testImage2);
-            this.testTile = new CollageTileView();
-            this.testTile.galleryImage = this.testImage1;
         }
 
         [After]
@@ -55,10 +52,6 @@ package gallery.cases {
             this.galleryViewMediator.setViewComponent(null);
             this.galleryViewMediator.eventDispatcher = null;
             this.galleryViewMediator = null;
-            if(this.testTile)
-            {
-                this.testTile.destroy();
-            }
         }
 
         [Test]

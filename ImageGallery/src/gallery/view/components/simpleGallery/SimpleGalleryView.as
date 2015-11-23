@@ -7,6 +7,10 @@ package gallery.view.components.simpleGallery {
 
     import org.osflash.signals.Signal;
 
+    /** This class represents view for simple gallery.
+     * It controls the order of displaying of tiles on the screen.
+     * Also this class dispatches image selected event,
+     * so that controller can apply appropriate logic on this signal.*/
     public class SimpleGalleryView extends Sprite implements IGalleryView {
 
         private static const VIEW_WIDTH:uint = 610;

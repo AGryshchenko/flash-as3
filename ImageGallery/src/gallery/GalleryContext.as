@@ -10,9 +10,9 @@ package gallery {
     import gallery.service.IGalleryImageService;
     import gallery.service.XMLImageService;
     import gallery.signals.GalleryUpdatedSignal;
-    import gallery.signals.LoadGallerySignal;
+    import gallery.signals.ViewInitializedSignal;
     import gallery.signals.LoadNewImageSignal;
-    import gallery.signals.SelectImageSignal;
+    import gallery.signals.ImageSelectedSignal;
     import gallery.signals.UpdateGallerySignal;
     import gallery.view.components.IGalleryView;
     import gallery.view.mediators.ApplicationViewMediator;
@@ -22,6 +22,7 @@ package gallery {
     import org.robotlegs.core.IMediatorMap;
     import org.robotlegs.mvcs.SignalContext;
 
+    /** Context of application*/
     public class GalleryContext extends SignalContext {
 
         override protected function get mediatorMap():IMediatorMap {
@@ -46,9 +47,9 @@ package gallery {
             injector.mapSingleton(GalleryUpdatedSignal);
             injector.mapSingleton(LoadNewImageSignal);
 
-            signalCommandMap.mapSignalClass(LoadGallerySignal, LoadGalleryCommand);
+            signalCommandMap.mapSignalClass(ViewInitializedSignal, LoadGalleryCommand);
             signalCommandMap.mapSignalClass(UpdateGallerySignal, UpdateGalleryCommand);
-            signalCommandMap.mapSignalClass(SelectImageSignal, SelectImageCommand);
+            signalCommandMap.mapSignalClass(ImageSelectedSignal, SelectImageCommand);
 
             //map view
             mediatorMap.mapView(IGalleryView, GalleryViewMediator);

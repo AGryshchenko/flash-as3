@@ -16,6 +16,9 @@ package gallery.view.components.simpleGallery {
 
     import org.osflash.signals.Signal;
 
+    /** This is a view for image tile in Simple view gallery.
+     *  This tile is used to show image, show preloader and
+     *  dispatch selected signals to parent gallery view. */
     public class SimpleTileView extends SimpleTile {
 
         private static const IMAGE_BUFFER_LENGTH:uint = 1;

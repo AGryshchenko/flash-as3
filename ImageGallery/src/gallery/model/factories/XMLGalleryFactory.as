@@ -4,6 +4,7 @@ package gallery.model.factories {
     import gallery.model.vo.Gallery;
     import gallery.model.vo.GalleryImage;
 
+    /** This class parses XMLList object and creates gallery based on data from it.*/
     public class XMLGalleryFactory implements IGalleryFactory {
 
         public function createGallery(input:Object, baseURL:String = ""):Gallery {

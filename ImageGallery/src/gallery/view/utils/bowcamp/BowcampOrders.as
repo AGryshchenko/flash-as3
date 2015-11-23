@@ -1,4 +1,7 @@
 package gallery.view.utils.bowcamp {
+
+    /** This class contains bowcamp codes to display
+     *  square tiles of different size in a square or rectangle*/
     public class BowcampOrders {
         public static const RECT_CODE_9:String = "9 15 11 6 4 5 3 1 6 5 1 4";
         public static const RECT_CODE_12:String = "12 29 16 9 8 5 7 3 2 9 3 8 7 2 5";

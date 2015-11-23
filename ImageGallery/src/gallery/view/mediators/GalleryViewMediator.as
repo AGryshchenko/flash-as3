@@ -2,22 +2,23 @@ package gallery.view.mediators {
     import gallery.model.vo.Gallery;
     import gallery.model.vo.IGalleryImage;
     import gallery.signals.GalleryUpdatedSignal;
-    import gallery.signals.LoadGallerySignal;
+    import gallery.signals.ViewInitializedSignal;
     import gallery.signals.LoadNewImageSignal;
-    import gallery.signals.SelectImageSignal;
+    import gallery.signals.ImageSelectedSignal;
     import gallery.view.components.IGalleryView;
 
     import org.robotlegs.mvcs.Mediator;
 
+    /** Class represents Mediator in MVCS model and can mediate IGalleryView*/
     public class GalleryViewMediator extends Mediator {
         [Inject]
-        public var loadGallery:LoadGallerySignal;
+        public var viewInitialized:ViewInitializedSignal;
 
         [Inject]
         public var galleryUpdated:GalleryUpdatedSignal;
 
         [Inject]
-        public var selectImage:SelectImageSignal;
+        public var imageSelected:ImageSelectedSignal;
 
         [Inject]
         public var loadNewImage:LoadNewImageSignal;
@@ -29,25 +30,25 @@ package gallery.view.mediators {
             galleryUpdated.add(onGalleryUpdated);
             loadNewImage.add(onLoadNewImage);
             galleryView.imageSelected.add(handleImageSelected);
-            loadGallery.dispatch();
+            viewInitialized.dispatch();
         }
 
         protected function onGalleryUpdated(gallery:Gallery):void {
             galleryView.dataProvider = gallery.photos;
         }
 
-        protected function onLoadNewImage(imageSlotIndex:uint, newImage:IGalleryImage):void {
+        protected function onLoadNewImage(imageSlotIndex:Number, newImage:IGalleryImage):void {
             galleryView.loadNewImage(imageSlotIndex, newImage);
         }
 
         protected function handleImageSelected(index:Number):void {
-            selectImage.dispatch(index);
+            imageSelected.dispatch(index);
         }
 
         override public function onRemove():void {
-            loadGallery.removeAll();
+            viewInitialized.removeAll();
             galleryUpdated.removeAll();
-            selectImage.removeAll();
+            imageSelected.removeAll();
             loadNewImage.removeAll();
             galleryView.destroy();
         }

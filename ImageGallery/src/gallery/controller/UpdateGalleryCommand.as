@@ -5,6 +5,8 @@ package gallery.controller {
 
     import org.robotlegs.mvcs.Command;
 
+    /** This command is executed in response of model signal,
+     * and informs view that new data is available for display.*/
     public class UpdateGalleryCommand extends Command {
         [Inject]
         public var gallery:IGallery;

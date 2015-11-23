@@ -3,9 +3,11 @@ package gallery.signals {
 
     import org.osflash.signals.Signal;
 
+    /** Signal is dispatched from controller to inform view that new
+     *  image should be loaded in specific position*/
     public class LoadNewImageSignal extends Signal {
         public function LoadNewImageSignal() {
-            super(Object, IGalleryImage);
+            super(Number, IGalleryImage);
         }
     }
 }

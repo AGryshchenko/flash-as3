@@ -37,13 +37,13 @@ package gallery.cases {
         public function testRandomImage():void {
             var image1:GalleryImage = new GalleryImage();
             var image2:GalleryImage = new GalleryImage();
+            image1.URL = "image1Test";
+            image2.URL = "image2Test";
             var randomImage:IGalleryImage = null;
             var gallery:Gallery = new Gallery();
             this.galleryModel.gallery = gallery;
             gallery.photos.push(image1);
             gallery.photos.push(image2);
-            image1.URL = "image1Test";
-            image2.URL = "image2Test";
             randomImage = this.galleryModel.randomImage();
             Assert.assertTrue("RandomImage returns one of added images", randomImage == image1 || randomImage == image2);
         }

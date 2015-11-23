@@ -1,6 +1,8 @@
 package gallery.view.utils.bowcamp {
-    /**Class represents bowcamp algorythm, suited for needs of this application.
-     * Current implementation supports only simple Square tiling algorithm with 4 items in group */
+
+    /** Class accepts bowcamp code string, and parses them according to bowcamp algorithm taking into account needs of this application.
+     * This class is used only by Collage view and has supplementary role in displaying objects.
+     * Current implementation supports Square tiles, that can form square or rectangle.*/
     public class BowcampOrderObject {
         public var numItems:uint;
 

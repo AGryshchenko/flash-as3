@@ -3,6 +3,8 @@ package gallery.controller {
 
     import org.robotlegs.mvcs.Command;
 
+    /** This command is executed when view is ready,
+     * and it initialises loading of gallery data by  gallery service.*/
     public class LoadGalleryCommand extends Command {
         [Inject]
         public var service:IGalleryImageService;

@@ -18,6 +18,9 @@ package gallery.view.components.collageGallery {
 
     import org.osflash.signals.Signal;
 
+    /** This is a view for image tile in Collage view gallery.
+     *  This tile is used to show image, show preloader and
+     *  dispatch selected signals to parent gallery view. */
     public class CollageTileView extends SquareTile {
 
         private static const IMAGE_BUFFER_LENGTH:uint = 1;

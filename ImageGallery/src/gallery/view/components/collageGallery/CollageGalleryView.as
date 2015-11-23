@@ -8,28 +8,37 @@ package gallery.view.components.collageGallery {
 
     import org.osflash.signals.Signal;
 
+    /** This class represents view for Collage gallery.
+     * It controls the order of displaying of tiles on the screen and
+     * uses Bowcamp algorithm to position tiles.
+     * Also this class dispatches image selected event,
+     * so that controller can apply appropriate logic on this signal.
+     * @param bkpOrder - represents Bowcamp order, how the tiles will be displayed.
+     * @param minTileSize - represents the minimal size of tile that will be
+     * displayed with Bowcamp algorithm. Overall size of gallery
+     * can be changed by changing this constant.
+     * @see BowcampOrderObject */
     public class CollageGalleryView extends Sprite implements IGalleryView {
-
-        private static const MIN_TILE_SIZE:uint = 50;
-
 
         private var _dataProvider:Array;
 
         private var _imageSelected:Signal = new Signal(Number);
 
         private var _bkpOrder:String;
+        private var _minTileSize:Number;
 
         private var _tiles:Vector.<CollageTileView> = new Vector.<CollageTileView>();
 
 
-        public function CollageGalleryView(bkpOrder:String) {
+        public function CollageGalleryView(bkpOrder:String, minTileSize:Number = 50) {
             this._bkpOrder = bkpOrder;
+            this._minTileSize = minTileSize;
         }
 
         private function galleryUpdated():void {
             unloadAllTiles();
 
-            var bkpObject:BowcampOrderObject = new BowcampOrderObject(_bkpOrder, MIN_TILE_SIZE);
+            var bkpObject:BowcampOrderObject = new BowcampOrderObject(_bkpOrder, _minTileSize);
 
             var currentTileObject:BowcampSquareTileObject;
             var tile:CollageTileView;

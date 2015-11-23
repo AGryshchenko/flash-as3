@@ -4,6 +4,7 @@ package gallery.model {
 
     import org.robotlegs.mvcs.*;
 
+    /** This class is used to store and retrieve data, that are needed for the gallery.*/
     public class GalleryModel extends Actor {
 
         private var _gallery:IGallery;

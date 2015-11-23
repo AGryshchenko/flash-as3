@@ -12,6 +12,9 @@ package gallery.service {
 
     import org.robotlegs.mvcs.Actor;
 
+    /** This class represents service in MVCS model. The purpose of this class is loading a list of images
+     * that should be used as images for gallery. The list is parsed with IGalleryFactory,
+     * then the list dispatched with signal to controller.*/
     public class XMLImageService extends Actor implements IGalleryImageService {
         [Inject]
         public var galleryFactory:IGalleryFactory;
@@ -28,11 +31,11 @@ package gallery.service {
 
         public function loadGallery():void {
             var xmlLoader:URLLoader = new URLLoader();
-            xmlLoader.load(new URLRequest(BASE_URL + "gallery.xml"));
             xmlLoader.addEventListener(Event.COMPLETE, handleServiceResult);
             xmlLoader.addEventListener(ErrorEvent.ERROR, handleServiceFault);
             xmlLoader.addEventListener(IOErrorEvent.IO_ERROR, handleServiceFault);
             xmlLoader.addEventListener(SecurityErrorEvent.SECURITY_ERROR, handleServiceFault);
+            xmlLoader.load(new URLRequest(BASE_URL + "gallery.xml"));
         }
 
         protected function handleServiceResult(event:Object):void {
