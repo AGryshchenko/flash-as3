@@ -20,21 +20,21 @@ package {
          *  var result:XMLList = new XMLList();
          *  for each (var node:XML in target) {
          *      with (node) {
-		 *          if (condition) {
-		 *              result += node;
-		 *          }
-		 *      }
-		 *  }
+         *          if (condition) {
+         *              result += node;
+         *          }
+         *      }
+         *  }
          * return result;
          *
-		 * In expression "(@myVal % 2 && trace(@myVal))" @myVal % 2 returns 0 or 1,
-		 * and trace(@myVal) returns void, which is regarded as undefined or false 
-		 * in this expression. So basically xmlData.children().(@myVal % 2 && trace(@myVal)) 
-		 * returns an empty XMLList because boolean expression is always false.
+         * In expression "(@myVal % 2 && trace(@myVal))" @myVal % 2 returns 0 or 1,
+         * and trace(@myVal) returns void, which is regarded as undefined or false 
+         * in this expression. So basically xmlData.children().(@myVal % 2 && trace(@myVal)) 
+         * returns an empty XMLList because boolean expression is always false.
          * Without knowing initial intent of this code it is hard to tell, whether it works 
-		 * incorrectly according to its business logic, but this expression would have returned a 
-		 * list of odd values if it didn't have trace(@myVal). The way it is now, it traces the 
-		 * odd values, returning an empty list.
+         * incorrectly according to its business logic, but this expression would have returned a 
+         * list of odd values if it didn't have trace(@myVal). The way it is now, it traces the 
+         * odd values, returning an empty list.
          * */
         public function XmlCodeQuestion() {
 
